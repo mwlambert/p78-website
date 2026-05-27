@@ -27,19 +27,21 @@ if (!image) {
 <header class="hero" id="top">
   {image && <img id="heroImg" class="hero-img" src={image} alt={imageAlt} />}
 
-  <div class="hero-body wrap">
-    <div class="eyebrow">In-space logistics</div>
-    <h1>The logistics layer of the in-space economy.</h1>
-    <p class="sub">
-      The propulsion systems and vehicles that connect every asset in space — from orbital data centres to the lunar surface.
-    </p>
-    <div class="cta-row">
-      <a href="#products" class="btn btn-primary">
-        Explore the products <span class="arr">&#8599;</span>
-      </a>
-      <a href="#mission" class="btn btn-ghost">
-        <span class="play">&#9658;</span> The mission
-      </a>
+  <div class="hero-body">
+    <div class="wrap">
+      <div class="eyebrow">In-space logistics</div>
+      <h1>The logistics layer of the in-space economy.</h1>
+      <p class="sub">
+        The propulsion systems and vehicles that connect every asset in space — from orbital data centres to the lunar surface.
+      </p>
+      <div class="cta-row">
+        <a href="#products" class="btn btn-primary">
+          Explore the products <span class="arr">&#8599;</span>
+        </a>
+        <a href="#mission" class="btn btn-ghost">
+          <span class="play">&#9658;</span> The mission
+        </a>
+      </div>
     </div>
   </div>
 
@@ -103,8 +105,6 @@ if (!image) {
   .hero-body {
     position: relative;
     z-index: 2;
-    width: 100%;
-    align-self: stretch;
     padding-bottom: var(--space-hero-pad-b);
     padding-top: var(--space-8);
   }
