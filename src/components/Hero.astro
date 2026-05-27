@@ -107,6 +107,25 @@ if (!image) {
     z-index: 2;
     padding-bottom: var(--space-hero-pad-b);
     padding-top: var(--space-8);
+    animation: hero-text-exit linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 60vh;
+  }
+  .hero .eyebrow::before {
+    display: none;
+  }
+
+  @keyframes hero-text-exit {
+    to {
+      opacity: 0;
+      transform: translateY(-40px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-body {
+      animation: none;
+    }
   }
 
   h1 {
