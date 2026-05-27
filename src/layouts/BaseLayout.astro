@@ -1,0 +1,76 @@
+---
+import "../styles/tokens.css";
+import "../styles/base.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const {
+  title = "P78 — The logistics layer of the in-space economy",
+  description = "The propulsion systems and vehicles that connect every asset in space — from orbital data centres to the lunar surface.",
+  ogImage = "/images/hero/Paris_iss.jpg",
+} = Astro.props;
+
+const siteUrl = Astro.site?.toString().replace(/\/$/, "") ?? "";
+const canonical = new URL(Astro.url.pathname, Astro.site ?? "https://p78space.com").toString();
+const ogImageUrl = ogImage.startsWith("http")
+  ? ogImage
+  : `${siteUrl}${ogImage}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="P78" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImageUrl} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <slot />
+
+    <script>
+      const prefersReduced = matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      const els = document.querySelectorAll(".reveal");
+
+      if (prefersReduced) {
+        els.forEach((el) => el.classList.add("in"));
+      } else {
+        const io = new IntersectionObserver(
+          (entries) =>
+            entries.forEach((e) => {
+              if (e.isIntersecting) e.target.classList.add("in");
+            }),
+          { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+        );
+        els.forEach((el) => io.observe(el));
+      }
+    </script>
+  </body>
+</html>

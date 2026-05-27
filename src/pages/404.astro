@@ -1,0 +1,105 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout
+  title="404 — Off the trajectory · P78"
+  description="The page you were looking for isn't here."
+>
+  <Nav />
+
+  <main class="notfound">
+    <div class="wrap">
+      <div class="code">404</div>
+      <h1>Off the trajectory.</h1>
+      <p>
+        The page you were looking for isn't here. It may have been moved, renamed, or never launched.
+      </p>
+      <div class="cta-row">
+        <a href="/" class="btn btn-primary">
+          Back to home <span class="arr">&#8599;</span>
+        </a>
+        <a href="/#partner" class="btn btn-ghost">Partner with us</a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .notfound {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-8) 0 var(--space-6);
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .code {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: var(--tracking-mono);
+    text-transform: uppercase;
+    color: var(--faring-300);
+    margin-bottom: var(--space-4);
+  }
+  .notfound h1 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: var(--tracking-display);
+    line-height: 0.98;
+    font-size: var(--fs-display-xl);
+    max-width: 14ch;
+  }
+  .notfound p {
+    margin-top: var(--space-4);
+    max-width: 48ch;
+    font-size: var(--fs-body-lg);
+    line-height: 1.5;
+    color: var(--faring-300);
+  }
+  .cta-row {
+    margin-top: var(--space-5);
+    display: flex;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+  }
+  .btn {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--paper);
+    color: var(--paper);
+    text-decoration: none;
+    border-radius: 999px;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: transparent;
+  }
+  .btn-primary {
+    background: var(--paper);
+    color: var(--ink);
+  }
+  .btn-primary:hover {
+    background: #fff;
+  }
+  .btn-ghost:hover {
+    background: var(--paper);
+    color: var(--ink);
+  }
+  .btn .arr {
+    transition: transform 0.3s;
+    display: inline-block;
+  }
+  .btn:hover .arr {
+    transform: translate(3px, -3px);
+  }
+</style>

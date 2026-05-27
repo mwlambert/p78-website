@@ -1,0 +1,104 @@
+---
+---
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">P78</div>
+        <div class="footer-tag">
+          The logistics layer of the in-space economy.
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Site</h4>
+        <a href="#mission">Mission</a>
+        <a href="#products">Products</a>
+        <a href="#careers">Careers</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:contact@p78space.com">contact@p78space.com</a>
+        <a href="#partner">Partner with us</a>
+      </div>
+      <div class="footer-col">
+        <h4>Elsewhere</h4>
+        <a href="#" target="_blank">LinkedIn</a>
+        <a href="#" target="_blank">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>P78 Space &middot; &copy; 2026</span>
+      <span>Imagery courtesy of NASA</span>
+      <span>Built for the in-space decade</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background: var(--ink);
+    color: var(--paper);
+    border-top: 1px solid var(--rule);
+    padding: var(--space-5) 0 var(--space-4);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr repeat(3, 1fr);
+    gap: var(--space-5);
+    align-items: start;
+  }
+  @media (max-width: 760px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4);
+    }
+  }
+  .footer-col h4 {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: var(--tracking-mono);
+    text-transform: uppercase;
+    color: var(--faring-300);
+    font-weight: 500;
+    margin-bottom: var(--space-3);
+  }
+  .footer-col a {
+    display: block;
+    color: var(--paper);
+    text-decoration: none;
+    font-size: 14px;
+    padding: var(--space-1) 0;
+    opacity: 0.82;
+    transition: opacity 0.25s;
+  }
+  .footer-col a:hover {
+    opacity: 1;
+  }
+  .footer-brand {
+    font-family: var(--font-mono);
+    letter-spacing: 0.18em;
+    font-size: 16px;
+    margin-bottom: var(--space-3);
+  }
+  .footer-tag {
+    font-size: 13px;
+    color: var(--faring-300);
+    line-height: 1.5;
+    max-width: 30ch;
+  }
+  .footer-base {
+    margin-top: var(--space-5);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--faring-300);
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+</style>

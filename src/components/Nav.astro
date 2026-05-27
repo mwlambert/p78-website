@@ -1,0 +1,67 @@
+---
+---
+
+<nav>
+  <div class="nav-in">
+    <a href="#top" class="brand" aria-label="P78 — home">
+      <img src="/logo.svg" alt="P78" />
+    </a>
+    <div class="navlinks">
+      <a href="#mission">Mission</a>
+      <a href="#products">Products</a>
+      <a href="#careers">Careers</a>
+      <a href="#partner">Partner with us</a>
+    </div>
+  </div>
+</nav>
+
+<style>
+  nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 60;
+  }
+  .nav-in {
+    max-width: var(--doc-w);
+    margin: 0 auto;
+    padding: var(--space-3) var(--page-pad);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  .brand img {
+    display: block;
+    height: 28px;
+    width: auto;
+  }
+  .navlinks {
+    display: flex;
+    gap: var(--space-4);
+    align-items: center;
+  }
+  .navlinks a {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: var(--tracking-mono);
+    text-transform: uppercase;
+    color: var(--paper);
+    text-decoration: none;
+    opacity: 0.78;
+    transition: opacity 0.25s;
+  }
+  .navlinks a:hover {
+    opacity: 1;
+  }
+  @media (max-width: 900px) {
+    .navlinks a {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,61 @@
+:root {
+  /* ============ PALETTE ============ */
+  /* Neutral */
+  --paper:      #EFF0EB;
+  --paper-2:    #E5E7E1;
+  --paper-3:    #DCDED7;
+  --ink:        #1A1D1C;
+  --ink-soft:   #292D2C;
+  --faring-200: #DCDED7;
+  --faring-300: #C9CFCD;
+  --faring-500: #90908D;
+  --faring-700: #4D5252;
+  /* Accent (defined, not yet applied in v1) */
+  --mars:       #FF5500;
+  --mars-soft:  #FB9561;
+  --solar:      #D5FF5A;
+  --solar-soft: #E2FB97;
+
+  /* ============ TYPOGRAPHY ============ */
+  --font-display: "Die Grotesk B", "Space Grotesk", Helvetica, Arial, sans-serif;
+  --font-body:    "Die Grotesk B", "Space Grotesk", Helvetica, Arial, sans-serif;
+  --font-mono:    "Roboto Mono", ui-monospace, Menlo, monospace;
+
+  --fs-display-xl: clamp(38px, 7vw, 98px);
+  --fs-display-lg: clamp(28px, 4.4vw, 56px);
+  --fs-display-md: clamp(22px, 2.4vw, 32px);
+  --fs-body-lg:    clamp(15px, 1.4vw, 18px);
+  --fs-body:       clamp(14px, 1.3vw, 16px);
+  --fs-mono-sm:    11px;
+  --fs-mono-xs:    10.5px;
+
+  --tracking-mono:    0.16em;
+  --tracking-display: -0.02em;
+
+  /* ============ SPACING — primitive scale ============ */
+  /* The only values allowed for padding, margin, and gap. Off-scale       */
+  /* numbers are snapped to the nearest step (ties round up).              */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 40px;
+  --space-6: 64px;
+  --space-7: 96px;
+  --space-8: 128px;
+
+  /* ============ SPACING — responsive sectional ============ */
+  /* clamp() wrappers only. Min/max are snapped to the primitive scale.    */
+  --space-section:       clamp(64px, 10vh, 128px); /* section padding-y         */
+  --space-section-head:  clamp(40px, 6vh, 64px);   /* section head → body gap   */
+  --space-grid:          clamp(40px, 5vw, 96px);   /* major 2-col grids/gaps    */
+  --space-product-pad:   clamp(64px, 8vh, 96px);   /* product article padding-y */
+  --space-role-gap:      clamp(16px, 3vw, 40px);   /* role row gap              */
+  --space-hero-pad-b:    clamp(24px, 5vh, 64px);   /* hero body padding-bottom  */
+
+  /* ============ LAYOUT ============ */
+  --doc-w:      1280px;
+  --page-pad:   clamp(20px, 4vw, 52px);
+  --rule:       rgba(233, 240, 235, 0.14);
+  --rule-light: #DCDED7;
+}

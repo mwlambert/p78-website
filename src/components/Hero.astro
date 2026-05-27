@@ -1,0 +1,204 @@
+---
+import fs from "node:fs";
+import path from "node:path";
+import StatCell from "./StatCell.astro";
+
+interface Props {
+  image?: string;
+  imageAlt?: string;
+}
+
+let { image, imageAlt = "" } = Astro.props;
+
+if (!image) {
+  const heroDir = path.resolve(process.cwd(), "public/images/hero");
+  try {
+    const files = fs
+      .readdirSync(heroDir)
+      .filter((f) => /\.(jpe?g|png|webp|avif)$/i.test(f))
+      .sort();
+    if (files[0]) image = `/images/hero/${files[0]}`;
+  } catch {
+    /* directory missing — image stays undefined */
+  }
+}
+---
+
+<header class="hero" id="top">
+  {image && <img id="heroImg" class="hero-img" src={image} alt={imageAlt} />}
+
+  <div class="hero-body wrap">
+    <div class="eyebrow">In-space logistics</div>
+    <h1>The logistics layer of the in-space economy.</h1>
+    <p class="sub">
+      The propulsion systems and vehicles that connect every asset in space — from orbital data centres to the lunar surface.
+    </p>
+    <div class="cta-row">
+      <a href="#products" class="btn btn-primary">
+        Explore the products <span class="arr">&#8599;</span>
+      </a>
+      <a href="#mission" class="btn btn-ghost">
+        <span class="play">&#9658;</span> The mission
+      </a>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stats-in">
+      <StatCell value="LEO &#8594; Cislunar" label="Operating envelope" />
+      <StatCell value="Re-use" label="Design principle" />
+      <StatCell value="In-space" label="Propulsion &amp; transfer" />
+      <StatCell value="2030s" label="In-space economy" />
+    </div>
+  </div>
+</header>
+
+<script>
+  const img = document.getElementById("heroImg") as HTMLImageElement | null;
+  const prefersReduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (img && !prefersReduced) {
+    addEventListener(
+      "scroll",
+      () => {
+        img.style.transform =
+          "scale(1.06) translateY(" + scrollY * 0.14 + "px)";
+      },
+      { passive: true },
+    );
+  }
+</script>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+  }
+  .hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 118%;
+    object-fit: cover;
+    object-position: center 38%;
+    transform: scale(1.06);
+    z-index: 0;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      to top,
+      rgba(26, 29, 28, 0.94),
+      rgba(26, 29, 28, 0.4) 42%,
+      rgba(26, 29, 28, 0.05) 72%,
+      rgba(26, 29, 28, 0.22)
+    );
+  }
+  .hero-body {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    align-self: stretch;
+    padding-bottom: var(--space-hero-pad-b);
+    padding-top: var(--space-8);
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.022em;
+    line-height: 0.97;
+    font-size: var(--fs-display-xl);
+    max-width: 15ch;
+  }
+  .sub {
+    margin-top: var(--space-4);
+    max-width: 50ch;
+    font-size: var(--fs-body-lg);
+    line-height: 1.5;
+    color: var(--faring-300);
+  }
+  .cta-row {
+    margin-top: var(--space-5);
+    display: flex;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+  }
+  .btn {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--paper);
+    color: var(--paper);
+    text-decoration: none;
+    border-radius: 999px;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: transparent;
+    cursor: pointer;
+  }
+  .btn-primary {
+    background: var(--paper);
+    color: var(--ink);
+  }
+  .btn-primary:hover {
+    background: #fff;
+  }
+  .btn-ghost:hover {
+    background: var(--paper);
+    color: var(--ink);
+  }
+  .btn .arr {
+    transition: transform 0.3s;
+    display: inline-block;
+  }
+  .btn:hover .arr {
+    transform: translate(3px, -3px);
+  }
+  .btn .play {
+    width: 22px;
+    height: 22px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+  }
+
+  /* stat strip */
+  .stats {
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid var(--rule);
+  }
+  .stats-in {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: var(--doc-w);
+    margin: 0 auto;
+    padding: 0 var(--page-pad);
+  }
+  @media (max-width: 760px) {
+    .stats-in {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .stats-in :global(.stat:nth-child(odd)) {
+      border-left: 0;
+      padding-left: 0;
+    }
+    .stats-in :global(.stat:nth-child(n + 3)) {
+      border-top: 1px solid var(--rule);
+    }
+  }
+</style>

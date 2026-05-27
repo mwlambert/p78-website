@@ -1,0 +1,188 @@
+---
+interface Spec {
+  k: string;
+  v: string;
+}
+interface Props {
+  number: string;
+  category: string;
+  name: string;
+  status: string;
+  body: string[];
+  chips: string[];
+  specs: Spec[];
+  linkText: string;
+  href: string;
+}
+
+const { number, category, name, status, body, chips, specs, linkText, href } =
+  Astro.props;
+---
+
+<article class="product reveal">
+  <div class="meta">
+    <div class="product-num">Product {number} &nbsp;/&nbsp; {category}</div>
+    <div class="product-name">{name}</div>
+    <span class="product-tag">{status}</span>
+  </div>
+  <div>
+    <div class="product-body">
+      {body.map((p) => <p>{p}</p>)}
+    </div>
+    <div class="chips">
+      {
+        chips.map((c) => (
+          <span class="chip">
+            <span class="dot" />
+            {c}
+          </span>
+        ))
+      }
+    </div>
+    <div class="specs">
+      {
+        specs.map((s) => (
+          <div class="spec">
+            <span class="k">{s.k}</span>
+            <span class="v" set:html={s.v} />
+          </div>
+        ))
+      }
+    </div>
+    {/* Brief link disabled until briefs are written
+    <a class="product-link" href={href}>
+      {linkText} <span class="arr">&#8599;</span>
+    </a>
+    */}
+  </div>
+</article>
+
+<style>
+  .product {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: var(--space-grid);
+    padding: var(--space-product-pad) 0;
+    border-bottom: 1px solid var(--rule-light);
+    align-items: start;
+  }
+  .product:last-child {
+    border-bottom: 0;
+  }
+  @media (max-width: 860px) {
+    .product {
+      grid-template-columns: 1fr;
+      gap: var(--space-5);
+    }
+  }
+  .meta {
+    position: sticky;
+    top: var(--space-7);
+  }
+  .product-num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: var(--tracking-mono);
+    text-transform: uppercase;
+    color: var(--faring-700);
+    margin-bottom: var(--space-3);
+  }
+  .product-name {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(28px, 3.6vw, 44px);
+    line-height: 1.02;
+    letter-spacing: var(--tracking-display);
+    margin-bottom: var(--space-3);
+  }
+  .product-tag {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid var(--rule-light);
+    padding: var(--space-2) var(--space-3);
+    border-radius: 999px;
+    display: inline-block;
+  }
+  .product-body {
+    font-size: clamp(15px, 1.35vw, 17px);
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 54ch;
+  }
+  .product-body p {
+    margin-bottom: var(--space-3);
+  }
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+  }
+  .chip {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    background: var(--paper);
+    border: 1px solid var(--rule-light);
+    border-radius: 999px;
+    padding: var(--space-2) var(--space-3);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+  .chip .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--ink);
+  }
+  .specs {
+    margin-top: var(--space-4);
+    border-top: 1px solid var(--rule-light);
+  }
+  .spec {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--space-4);
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--rule-light);
+  }
+  .spec .k {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--faring-700);
+  }
+  .spec .v {
+    font-family: var(--font-display);
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .product-link {
+    margin-top: var(--space-4);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: var(--space-2);
+  }
+  .product-link .arr {
+    transition: transform 0.25s;
+  }
+  .product-link:hover .arr {
+    transform: translate(3px, -3px);
+  }
+</style>

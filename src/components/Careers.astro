@@ -1,0 +1,81 @@
+---
+import RoleRow from "./RoleRow.astro";
+---
+
+<section class="light careers" id="careers">
+  <div class="wrap section-pad">
+    <div class="header-row">
+      <div>
+        <div class="eyebrow reveal">Careers</div>
+        <h2 class="reveal d1">Build the connective layer of space.</h2>
+      </div>
+      <p class="reveal d2">
+        We are a small team building the vehicles an orbital economy depends on. If that sounds like the type of work for you, we&#8217;d like to meet you.
+      </p>
+    </div>
+
+    <div class="roles">
+      <RoleRow
+        number="01"
+        title="Propulsion Intern"
+        type="Internship"
+        team="Propulsion"
+        href="#"
+      />
+      <RoleRow
+        number="02"
+        title="Propellant Intern"
+        type="Internship"
+        team="Propellant"
+        href="#"
+      />
+      <RoleRow
+        number="03"
+        title="Propulsion Engineer"
+        type="Full-time"
+        team="Propulsion"
+        href="#"
+      />
+      <RoleRow
+        number="04"
+        title="Open Application"
+        type="Any team"
+        team="Tell us your story"
+        href="#"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .careers .header-row {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: var(--space-grid);
+    align-items: end;
+    margin-bottom: var(--space-section-head);
+  }
+  @media (max-width: 860px) {
+    .careers .header-row {
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+  }
+  .careers .header-row h2 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: var(--tracking-display);
+    font-size: var(--fs-display-lg);
+    line-height: 1.04;
+    max-width: 18ch;
+  }
+  .careers .header-row p {
+    font-size: clamp(15px, 1.3vw, 16px);
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 42ch;
+  }
+  .roles {
+    border-top: 1px solid var(--rule-light);
+  }
+</style>
