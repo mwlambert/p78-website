@@ -11,3 +11,6 @@ files.zip
 branding/
 assets/font/
 assets/hero_images/
+
+# Licensed fonts — uncomment-out once Klim web license upgrade is confirmed
+public/fonts/

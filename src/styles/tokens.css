@@ -1,3 +1,28 @@
+/* ============ WEBFONTS ============ */
+/* Die Grotesk — Klim Type Foundry. Web license required before production.   */
+/* B = body workhorse (brand default). C = display width for headings.         */
+@font-face {
+  font-family: "Die Grotesk B";
+  src: url("/fonts/DieGrotesk-B-Regular.otf") format("opentype");
+  font-weight: 400 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Die Grotesk C";
+  src: url("/fonts/DieGrotesk-C-Regular.otf") format("opentype");
+  font-weight: 400 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Die Grotesk C";
+  src: url("/fonts/DieGrotesk-C-Bold.otf") format("opentype");
+  font-weight: 600 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* ============ PALETTE ============ */
   /* Neutral */
@@ -17,8 +42,8 @@
   --solar-soft: #E2FB97;
 
   /* ============ TYPOGRAPHY ============ */
-  --font-display: "Die Grotesk B", "Space Grotesk", Helvetica, Arial, sans-serif;
-  --font-body:    "Die Grotesk B", "Space Grotesk", Helvetica, Arial, sans-serif;
+  --font-display: "Die Grotesk C", Helvetica, Arial, sans-serif;
+  --font-body:    "Die Grotesk B", Helvetica, Arial, sans-serif;
   --font-mono:    "Roboto Mono", ui-monospace, Menlo, monospace;
 
   --fs-display-xl: clamp(38px, 7vw, 98px);
