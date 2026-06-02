@@ -1,0 +1,32 @@
+{
+  "slug": "open-application",
+  "order": 4,
+  "rowTitle": "Open Application",
+  "rowType": "Any team",
+  "rowTeam": "Tell us your story",
+  "pageTitle": "Open Application",
+  "pageDescription": "Don't see a role that fits? Tell us your story.",
+  "pageMeta": "Any team · Anywhere · Open year-round",
+  "sections": [
+    {
+      "label": "Why P78",
+      "paragraphs": [
+        "P78 is building the propulsion systems and orbital vehicles that connect every asset in space — from Earth orbit to the lunar surface. We're at an early stage, which means broad responsibility, genuine ownership, and the chance to see your work fly. We don't hire to a fixed background. Aerospace, automotive, energy, motorsport, precision manufacturing — the discipline matters less than how you approach problems. We look for people who are curious, take initiative, and see things through. If you work well in a close-knit team and want to contribute to something technically demanding from day one, we'd like to hear from you."
+      ]
+    },
+    {
+      "label": "About",
+      "paragraphs": [
+        "If you don't see a role that fits but you'd like to build with us, tell us your story."
+      ]
+    },
+    {
+      "label": "What to tell us",
+      "bullets": [
+        "What you've built — hardware, software, infrastructure, anything",
+        "What you'd most like to work on at P78",
+        "Anything else we should know"
+      ]
+    }
+  ]
+}

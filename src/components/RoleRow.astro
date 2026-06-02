@@ -8,9 +8,15 @@ interface Props {
 }
 
 const { number, title, type, team, href } = Astro.props;
+const isExternal = /^https?:\/\//.test(href);
 ---
 
-<a class="role reveal" href={href} target="_blank" rel="noopener">
+<a
+  class="role reveal"
+  href={href}
+  target={isExternal ? "_blank" : undefined}
+  rel={isExternal ? "noopener" : undefined}
+>
   <span class="num">{number}</span>
   <span class="title">{title}</span>
   <span class="meta-cell">{type}</span>

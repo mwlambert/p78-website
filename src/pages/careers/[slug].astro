@@ -1,0 +1,227 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+
+interface Section {
+  label: string;
+  paragraphs?: string[];
+  bullets?: string[];
+}
+interface Role {
+  slug: string;
+  order: number;
+  rowTitle: string;
+  rowType: string;
+  rowTeam: string;
+  pageTitle: string;
+  pageDescription: string;
+  pageMeta: string;
+  sections: Section[];
+}
+
+export async function getStaticPaths() {
+  const modules = import.meta.glob<{ default: Role } | Role>(
+    "../../data/roles/*.json",
+    { eager: true },
+  );
+  return Object.values(modules).map((mod) => {
+    const role = ("default" in mod ? mod.default : mod) as Role;
+    return { params: { slug: role.slug }, props: { role } };
+  });
+}
+
+const { role } = Astro.props as { role: Role };
+---
+
+<BaseLayout title={`${role.pageTitle} · P78`} description={role.pageDescription}>
+  <Nav />
+
+  <header class="role-header">
+    <div class="wrap">
+      <a href="/#careers" class="back">&#8592; All roles</a>
+      <h1>{role.pageTitle}</h1>
+      <p class="meta">{role.pageMeta}</p>
+    </div>
+  </header>
+
+  <article class="role-body">
+    <div class="wrap section-pad">
+      {
+        role.sections.map((section) => (
+          <section class="role-section">
+            <div class="col-label">{section.label}</div>
+            <div class="prose">
+              {section.paragraphs?.map((p) => <p>{p}</p>)}
+              {section.bullets && (
+                <ul>
+                  {section.bullets.map((b) => (
+                    <li>{b}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </section>
+        ))
+      }
+
+      <div class="apply-block">
+        <a href="#" class="btn-apply">
+          Apply for this role <span class="arr">&#8599;</span>
+        </a>
+        <p class="apply-note">
+          Dummy button — application flow coming soon. For now, get in touch via the <a href="/#partner">partner form</a>.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* ===== DARK HEADER BAND ===== */
+  .role-header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: var(--space-8) 0 var(--space-7);
+  }
+  .back {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: var(--tracking-mono);
+    text-transform: uppercase;
+    color: var(--paper);
+    opacity: 0.65;
+    text-decoration: none;
+    margin-bottom: var(--space-6);
+    transition: opacity 0.25s;
+  }
+  .back:hover {
+    opacity: 1;
+  }
+  .role-header h1 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: var(--tracking-display);
+    line-height: 1.02;
+    font-size: var(--fs-display-lg);
+    max-width: 22ch;
+  }
+  .role-header .meta {
+    margin-top: var(--space-4);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: var(--tracking-mono);
+    text-transform: uppercase;
+    color: var(--faring-300);
+  }
+
+  /* ===== LIGHT READING BODY ===== */
+  .role-body {
+    background: var(--paper);
+    color: var(--ink);
+  }
+  .role-section {
+    display: grid;
+    grid-template-columns: minmax(140px, 0.35fr) 1fr;
+    gap: var(--space-grid);
+    padding: var(--space-5) 0;
+    border-top: 1px solid var(--rule-light);
+    align-items: start;
+  }
+  .role-section:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+  @media (max-width: 760px) {
+    .role-section {
+      grid-template-columns: 1fr;
+      gap: var(--space-3);
+    }
+  }
+  .col-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: var(--tracking-mono);
+    text-transform: uppercase;
+    color: var(--faring-700);
+  }
+  .prose {
+    font-size: clamp(15px, 1.35vw, 17px);
+    line-height: 1.62;
+    color: var(--ink-soft);
+    max-width: 60ch;
+  }
+  .prose p {
+    margin-bottom: var(--space-3);
+  }
+  .prose p:last-child {
+    margin-bottom: 0;
+  }
+  .prose ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .prose li {
+    position: relative;
+    padding-left: var(--space-4);
+    margin-bottom: var(--space-3);
+  }
+  .prose li:last-child {
+    margin-bottom: 0;
+  }
+  .prose li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--faring-500);
+  }
+
+  /* ===== APPLY BLOCK ===== */
+  .apply-block {
+    margin-top: var(--space-5);
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--rule-light);
+  }
+  .btn-apply {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    padding: var(--space-3) var(--space-4);
+    background: var(--ink);
+    color: var(--paper);
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .btn-apply:hover {
+    background: transparent;
+    color: var(--ink);
+  }
+  .btn-apply .arr {
+    display: inline-block;
+    transition: transform 0.3s;
+  }
+  .btn-apply:hover .arr {
+    transform: translate(3px, -3px);
+  }
+  .apply-note {
+    margin-top: var(--space-4);
+    font-size: 13px;
+    color: var(--faring-500);
+    max-width: 60ch;
+  }
+  .apply-note a {
+    color: var(--ink);
+    text-decoration: underline;
+  }
+</style>

@@ -1,0 +1,44 @@
+{
+  "slug": "chemical-and-materials-intern",
+  "order": 2,
+  "rowTitle": "Chemical and Materials Intern",
+  "rowType": "Internship",
+  "rowTeam": "Propulsion",
+  "pageTitle": "Chemical and Materials Intern",
+  "pageDescription": "6-month end-of-study internship in France. Support P78's propellant and materials research — HTP characterisation, passivation processes, and compatibility testing.",
+  "pageMeta": "6-month end-of-study internship · France · September 2026",
+  "sections": [
+    {
+      "label": "Why P78",
+      "paragraphs": [
+        "P78 is building the propulsion systems and orbital vehicles that connect every asset in space — from Earth orbit to the lunar surface. Interns at P78 are embedded in the team and contributing to real projects from day one.",
+        "You'll take ownership of a defined problem, work directly with the engineers building the hardware, and deliver something real. Background and institution matter less than attitude and ability. If you're curious, self-directed, and ready to learn quickly, we'd like to hear from you."
+      ]
+    },
+    {
+      "label": "About the role",
+      "paragraphs": [
+        "You'll support P78's propellant and materials research programme — characterising hydrogen peroxide-based propellant systems, developing passivation processes, and running material compatibility testing. You'll work directly with the founders at an early stage, with real ownership of your work from day one.",
+        "This is an end-of-study internship with a view to a permanent role for the right person."
+      ]
+    },
+    {
+      "label": "What you'd work on",
+      "bullets": [
+        "Material compatibility testing: immersion, gravimetric analysis, mechanical property assessment",
+        "Passivation process development for H₂O₂-compatible system components",
+        "Propellant handling and characterisation under supervised laboratory conditions",
+        "Supporting data analysis and experimental documentation"
+      ]
+    },
+    {
+      "label": "What we're looking for",
+      "bullets": [
+        "Background in chemistry, materials science, chemical engineering, or similar",
+        "Comfortable in a lab environment — hands-on, methodical, safety-conscious",
+        "Exposure to energetic materials, propellants, or corrosive fluid handling is a plus",
+        "Self-directed and able to operate with limited supervision"
+      ]
+    }
+  ]
+}

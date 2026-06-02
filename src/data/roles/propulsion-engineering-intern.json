@@ -1,0 +1,44 @@
+{
+  "slug": "propulsion-engineering-intern",
+  "order": 1,
+  "rowTitle": "Propulsion Intern",
+  "rowType": "Internship",
+  "rowTeam": "Propulsion",
+  "pageTitle": "Propulsion Engineering Intern",
+  "pageDescription": "6-month end-of-study internship in France. Build P78's propulsion test facility — from layout and instrumentation through hot-fire campaigns.",
+  "pageMeta": "6-month end-of-study internship · France · September 2026",
+  "sections": [
+    {
+      "label": "Why P78",
+      "paragraphs": [
+        "P78 is building the propulsion systems and orbital vehicles that connect every asset in space — from Earth orbit to the lunar surface. Interns at P78 are embedded in the team and contributing to real projects from day one.",
+        "You'll take ownership of a defined problem, work directly with the engineers building the hardware, and deliver something real. Background and institution matter less than attitude and ability. If you're curious, self-directed, and ready to learn quickly, we'd like to hear from you."
+      ]
+    },
+    {
+      "label": "About the role",
+      "paragraphs": [
+        "You'll own the build-out of P78's propulsion test facility in France — from layout and utilities to instrumentation and initial operations. This is hands-on infrastructure work on hardware that will fire real propellants. You'll work directly with the founders and be involved across the full propulsion programme as it develops.",
+        "This is an end-of-study internship with a view to a permanent role for the right person."
+      ]
+    },
+    {
+      "label": "What you'd work on",
+      "bullets": [
+        "Test cell design and build: layout, propellant lines, instrumentation, data acquisition",
+        "Safety systems and operating procedures",
+        "Supporting hot-fire test campaigns as the facility comes online",
+        "Contributing to propulsion system development as required"
+      ]
+    },
+    {
+      "label": "What we're looking for",
+      "bullets": [
+        "Strong mechanical or aerospace engineering fundamentals",
+        "Comfortable with hands-on hardware work — you build things, not just model them",
+        "Some exposure to fluid systems, test infrastructure, or instrumentation is a plus",
+        "Self-directed — this is a real project with real deliverables, not a structured placement"
+      ]
+    }
+  ]
+}

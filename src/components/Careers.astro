@@ -1,6 +1,23 @@
 ---
 import RoleRow from "./RoleRow.astro";
-import roles from "../data/roles.json";
+
+interface Role {
+  slug: string;
+  order: number;
+  rowTitle: string;
+  rowType: string;
+  rowTeam: string;
+}
+
+const modules = import.meta.glob<{ default: Role } | Role>(
+  "../data/roles/*.json",
+  { eager: true },
+);
+const roles = Object.values(modules)
+  .map((mod) => (("default" in mod ? mod.default : mod) as Role))
+  .sort((a, b) => a.order - b.order);
+
+const pad2 = (n: number) => String(n).padStart(2, "0");
 ---
 
 <section class="light careers" id="careers">
@@ -16,7 +33,17 @@ import roles from "../data/roles.json";
     </div>
 
     <div class="roles">
-      {roles.map((role) => <RoleRow {...role} />)}
+      {
+        roles.map((r) => (
+          <RoleRow
+            number={pad2(r.order)}
+            title={r.rowTitle}
+            type={r.rowType}
+            team={r.rowTeam}
+            href={`/careers/${r.slug}`}
+          />
+        ))
+      }
     </div>
   </div>
 </section>

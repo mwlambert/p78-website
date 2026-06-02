@@ -1,0 +1,44 @@
+{
+  "slug": "propellant-intern",
+  "order": 3,
+  "rowTitle": "Propellant Intern",
+  "rowType": "Internship",
+  "rowTeam": "Propulsion",
+  "pageTitle": "Propellant Intern",
+  "pageDescription": "6-month end-of-study internship in France. Synthesise the hypergolic fuel that powers P78's hot-fire test campaigns.",
+  "pageMeta": "6-month end-of-study internship · France · September 2026",
+  "sections": [
+    {
+      "label": "Why P78",
+      "paragraphs": [
+        "P78 is building the propulsion systems and orbital vehicles that connect every asset in space — from Earth orbit to the lunar surface. Interns at P78 are embedded in the team and contributing to real projects from day one.",
+        "You'll take ownership of a defined problem, work directly with the engineers building the hardware, and deliver something real. Background and institution matter less than attitude and ability. If you're curious, self-directed, and ready to learn quickly, we'd like to hear from you."
+      ]
+    },
+    {
+      "label": "About the role",
+      "paragraphs": [
+        "You'll synthesise the hypergolic fuel P78 uses for hot-fire testing. This is hands-on synthetic chemistry work — designing and executing a synthesis route, producing fuel to a quality standard suitable for propulsion testing, and working safely with reactive materials. You'll work directly with the founders from day one.",
+        "This is an end-of-study internship with a view to a permanent role for the right person."
+      ]
+    },
+    {
+      "label": "What you'd work on",
+      "bullets": [
+        "Synthesis and production of hypergolic fuel for hot-fire test campaigns",
+        "Developing and documenting synthesis routes and quality procedures",
+        "Characterisation and purity validation of produced batches",
+        "Safe handling and storage of reactive and energetic materials"
+      ]
+    },
+    {
+      "label": "What we're looking for",
+      "bullets": [
+        "Background in organic or synthetic chemistry",
+        "Comfortable running independent lab work — you design the route, you execute it",
+        "Experience with reactive or energetic materials is a plus",
+        "Methodical, safety-conscious, and self-directed"
+      ]
+    }
+  ]
+}
