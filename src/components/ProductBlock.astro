@@ -11,8 +11,8 @@ interface Props {
   body: string[];
   chips: string[];
   specs: Spec[];
-  linkText: string;
-  href: string;
+  linkText?: string;
+  href?: string;
 }
 
 const { number, category, name, status, body, chips, specs, linkText, href } =
@@ -49,11 +49,11 @@ const { number, category, name, status, body, chips, specs, linkText, href } =
         ))
       }
     </div>
-    {/* Brief link disabled until briefs are written
-    <a class="product-link" href={href}>
-      {linkText} <span class="arr">&#8599;</span>
-    </a>
-    */}
+    {href && linkText && (
+      <a class="product-link" href={href}>
+        {linkText} <span class="arr">&#8599;</span>
+      </a>
+    )}
   </div>
 </article>
 

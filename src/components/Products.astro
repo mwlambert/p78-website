@@ -1,5 +1,6 @@
 ---
 import ProductBlock from "./ProductBlock.astro";
+import products from "../data/products.json";
 ---
 
 <section class="light products" id="products">
@@ -11,43 +12,7 @@ import ProductBlock from "./ProductBlock.astro";
       </h2>
     </div>
 
-    <ProductBlock
-      number="01"
-      category="Propulsion"
-      name="The propulsion system."
-      status="In development"
-      body={[
-        "A high-efficiency in-space propulsion system designed for repeated use. Built to move payloads between orbits, service assets already on station, and form the engine layer of vehicles operating across the in-space economy.",
-        "Designed from the start for missions measured in months, not minutes — and for the duty cycles that re-usable infrastructure demands.",
-      ]}
-      chips={["In-space", "Re-usable", "High-efficiency"]}
-      specs={[
-        { k: "Class", v: "In-space propulsion" },
-        { k: "Use", v: "Transfer &amp; servicing" },
-        { k: "Stage", v: "Development" },
-      ]}
-      linkText="Read the system brief"
-      href="#"
-    />
-
-    <ProductBlock
-      number="02"
-      category="Vehicle"
-      name="The vehicle."
-      status="Concept"
-      body={[
-        "The vehicle that the propulsion system makes possible. A re-usable in-space carrier — sized to move payloads, service stations and constellations, and extend routine operations from low Earth orbit to the lunar surface.",
-        "One platform, many missions. The backbone of an in-space economy that reaches from LEO to the lunar surface.",
-      ]}
-      chips={["In-space", "Re-usable", "Multi-mission"]}
-      specs={[
-        { k: "Class", v: "Cislunar carrier" },
-        { k: "Range", v: "LEO &#8594; Lunar surface" },
-        { k: "Stage", v: "Concept" },
-      ]}
-      linkText="Read the vehicle brief"
-      href="#"
-    />
+    {products.map((p) => <ProductBlock {...p} />)}
   </div>
 </section>
 

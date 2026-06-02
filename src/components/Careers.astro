@@ -1,5 +1,6 @@
 ---
 import RoleRow from "./RoleRow.astro";
+import roles from "../data/roles.json";
 ---
 
 <section class="light careers" id="careers">
@@ -15,34 +16,7 @@ import RoleRow from "./RoleRow.astro";
     </div>
 
     <div class="roles">
-      <RoleRow
-        number="01"
-        title="Propulsion Intern"
-        type="Internship"
-        team="Propulsion"
-        href="#"
-      />
-      <RoleRow
-        number="02"
-        title="Propellant Intern"
-        type="Internship"
-        team="Propellant"
-        href="#"
-      />
-      <RoleRow
-        number="03"
-        title="Propulsion Engineer"
-        type="Full-time"
-        team="Propulsion"
-        href="#"
-      />
-      <RoleRow
-        number="04"
-        title="Open Application"
-        type="Any team"
-        team="Tell us your story"
-        href="#"
-      />
+      {roles.map((role) => <RoleRow {...role} />)}
     </div>
   </div>
 </section>

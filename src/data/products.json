@@ -1,0 +1,40 @@
+[
+  {
+    "number": "01",
+    "category": "Propulsion",
+    "name": "Modern hypergolic propulsion.",
+    "status": "In development",
+    "body": [
+      "A non-toxic hypergolic engine for re-usable spacecraft. HTP-fuelled, fast to integrate, EU Space Act compliant — performance matched to legacy toxic systems without the handling burden.",
+      "Sized for the 350+ kg small-sat market, then scaled across the vehicle layer."
+    ],
+    "chips": ["Hypergolic", "Non-toxic", "HTP", "Storable"],
+    "specs": [
+      { "k": "Thrust class", "v": "500 N" },
+      { "k": "ISP", "v": "310 s" },
+      { "k": "Propellant", "v": "HTP bipropellant" },
+      { "k": "Stage", "v": "Development" }
+    ],
+    "linkText": "Read the system brief",
+    "href": ""
+  },
+  {
+    "number": "02",
+    "category": "Vehicle",
+    "name": "Orbital vehicles.",
+    "status": "Concept",
+    "body": [
+      "Re-usable in-space vehicles built around P78 propulsion. Refuelable in orbit, cislunar range from day one — sized to move payloads, service assets, and recover them across the in-space economy.",
+      "One platform, many missions."
+    ],
+    "chips": ["Re-usable", "Refuelable", "Cislunar range", "Multi-mission"],
+    "specs": [
+      { "k": "Class", "v": "In-space vehicle" },
+      { "k": "Range", "v": "LEO &#8594; Lunar" },
+      { "k": "Refuelling", "v": "In-orbit" },
+      { "k": "Stage", "v": "Concept" }
+    ],
+    "linkText": "Read the vehicle brief",
+    "href": ""
+  }
+]
