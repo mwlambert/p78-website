@@ -5,13 +5,13 @@
     "name": "Modern hypergolic propulsion.",
     "status": "In development",
     "body": [
-      "A non-toxic hypergolic engine for reusable spacecraft. HTP, fast to integrate, designed for the demands of reusable infrastructure.",
+      "A hypergolic engine for reusable spacecraft. HTP, fast to integrate, designed for the demands of reusable infrastructure.",
       "Sized for the 350+ kg small-sat market, then scaled across the vehicle layer."
     ],
-    "chips": ["Hypergolic", "Non-toxic", "HTP", "Storable"],
+    "chips": ["Hypergolic", "HTP", "Storable"],
     "specs": [
       { "k": "Thrust class", "v": "500 N" },
-      { "k": "ISP", "v": "310 s" },
+      { "k": "ISP", "v": "300 s" },
       { "k": "Propellant", "v": "HTP bipropellant" },
       { "k": "Stage", "v": "Development" }
     ],
@@ -20,7 +20,7 @@
   },
   {
     "number": "02",
-    "category": "Vehicle",
+    "category": "Servicing",
     "name": "Orbital vehicles.",
     "status": "Concept",
     "body": [
