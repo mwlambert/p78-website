@@ -69,6 +69,10 @@ const { number, category, name, status, body, chips, specs, linkText, href } =
   .product:last-child {
     border-bottom: 0;
   }
+  .meta {
+    position: sticky;
+    top: var(--space-7);
+  }
   @media (max-width: 860px) {
     .product {
       grid-template-columns: 1fr;
@@ -77,10 +81,6 @@ const { number, category, name, status, body, chips, specs, linkText, href } =
     .meta {
       position: static;
     }
-  }
-  .meta {
-    position: sticky;
-    top: var(--space-7);
   }
   .product-num {
     font-family: var(--font-mono);
