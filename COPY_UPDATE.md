@@ -26,7 +26,7 @@ The current live site is at `https://keen-beijinho-47b2f9.netlify.app` — use t
 |---|---|
 | `HTP` | Propellant architecture |
 | `LEO → Cislunar` | Operating envelope |
-| `Re-usable` | Design principle |
+| `Reusable` | Design principle |
 | `20+ years` | Combined team experience |
 
 (Removes the abstract "$90B" and replaces with a real, ownable stat — combined team experience. HTP is now public-facing.)
@@ -50,7 +50,7 @@ The current live site is at `https://keen-beijinho-47b2f9.netlify.app` — use t
 
 | # | Title | Description |
 |---|---|---|
-| 01 | Propulsion | HTP-fuelled engines for re-usable spacecraft. |
+| 01 | Propulsion | HTP engines for reusable spacecraft. |
 | 02 | Craft | Refuelable vehicles with cislunar range. |
 | 03 | Logistics | Routing, servicing, and supply across the in-space economy. |
 
@@ -72,14 +72,14 @@ The current live site is at `https://keen-beijinho-47b2f9.netlify.app` — use t
 - **Status tag:** `In development` ← unchanged
 - **Body:** replace.
 
-> A non-toxic hypergolic engine for re-usable spacecraft. HTP-fuelled, fast to integrate, EU Space Act compliant — performance matched to legacy toxic systems without the handling burden.
+> A non-toxic hypergolic engine for reusable spacecraft. HTP, fast to integrate, EU Space Act compliant — performance matched to legacy toxic systems without the handling burden.
 >
 > Sized for the 350–600 kg small-sat market, then scaled across the vehicle layer.
 
 - **Chips:** replace.
   - `Hypergolic`
   - `Non-toxic`
-  - `HTP-fuelled`
+  - `HTP`
   - `Storable`
 
 - **Spec table:** replace.
@@ -100,12 +100,12 @@ The current live site is at `https://keen-beijinho-47b2f9.netlify.app` — use t
 - **Status tag:** `Concept` ← unchanged
 - **Body:** replace.
 
-> Re-usable in-space vehicles built around P78 propulsion. Refuelable in orbit, cislunar range from day one — sized to move payloads, service assets, and recover them across the in-space economy.
+> Reusable in-space vehicles built around P78 propulsion. Refuelable in orbit, cislunar range from day one — sized to move payloads, service assets, and recover them across the in-space economy.
 >
 > One platform, many missions.
 
 - **Chips:** replace (must NOT overlap with propulsion chips).
-  - `Re-usable`
+  - `Reusable`
   - `Refuelable`
   - `Cislunar range`
   - `Multi-mission`
