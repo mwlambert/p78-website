@@ -9,39 +9,46 @@
         Getting to orbit is the easy part. Working there isn't.
       </h2>
     </div>
-    <div class="grid">
-      <div class="reveal d2">
+
+    <div class="mission-grid">
+      <div class="mission-block reveal d2">
         <div class="col-label">Why P78</div>
-        <p>
-          Stations age. Satellites run out of fuel. The Moon stays out of routine reach. Not because the destinations are impossible — because the connective layer between them doesn't exist.
-        </p>
-        <p>
-          P78 is building that layer: propulsion, vehicles, and logistics designed from day one for reuse, servicing, and cislunar range.
-        </p>
+        <div class="caps">
+          <div class="cap">
+            <span class="num">P / 1</span>
+            <h3>Propulsion</h3>
+            <p>Legacy systems are toxic, slow, and expensive.</p>
+          </div>
+          <div class="cap">
+            <span class="num">P / 2</span>
+            <h3>Reuse</h3>
+            <p>Every asset launches with a fixed operational life.</p>
+          </div>
+          <div class="cap">
+            <span class="num">P / 3</span>
+            <h3>Reach</h3>
+            <p>The Moon and in-orbit assets stay out of routine reach.</p>
+          </div>
+        </div>
       </div>
-      <div class="reveal d3">
+
+      <div class="mission-block reveal d3">
         <div class="col-label">What we do</div>
         <div class="caps">
           <div class="cap">
             <span class="num">01</span>
-            <div>
-              <h3>Propulsion</h3>
-              <p>HTP engines for reusable spacecraft.</p>
-            </div>
+            <h3>Propulsion</h3>
+            <p>HTP engines for reusable spacecraft.</p>
           </div>
           <div class="cap">
             <span class="num">02</span>
-            <div>
-              <h3>Vehicle</h3>
-              <p>Refuelable vehicles with cislunar range.</p>
-            </div>
+            <h3>Vehicle</h3>
+            <p>Refuelable vehicles with cislunar range.</p>
           </div>
           <div class="cap">
             <span class="num">03</span>
-            <div>
-              <h3>Logistics</h3>
-              <p>Routing, servicing, and supply across the in-space economy.</p>
-            </div>
+            <h3>Logistics</h3>
+            <p>Routing, servicing, and supply across the in-space economy.</p>
           </div>
         </div>
       </div>
@@ -50,17 +57,17 @@
 </section>
 
 <style>
-  .mission .grid {
+  .mission-grid {
     display: grid;
-    grid-template-columns: 1.1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: var(--space-grid);
     margin-top: var(--space-section-head);
     align-items: start;
   }
   @media (max-width: 860px) {
-    .mission .grid {
+    .mission-grid {
       grid-template-columns: 1fr;
-      gap: var(--space-5);
+      gap: var(--space-section-head);
     }
   }
   .col-label {
@@ -73,20 +80,14 @@
     padding-bottom: var(--space-3);
     border-bottom: 1px solid var(--rule-light);
   }
-  .mission p {
-    font-size: clamp(15px, 1.35vw, 17px);
-    line-height: 1.62;
-    color: var(--ink-soft);
-    margin-bottom: var(--space-3);
-  }
   .caps {
     display: flex;
     flex-direction: column;
   }
   .cap {
     display: grid;
-    grid-template-columns: auto 1fr;
-    gap: var(--space-4);
+    grid-template-columns: auto minmax(110px, max-content) 1fr;
+    gap: var(--space-3);
     padding: var(--space-4) 0;
     border-bottom: 1px solid var(--rule-light);
     align-items: baseline;
@@ -102,12 +103,22 @@
     font-weight: 500;
     font-size: clamp(17px, 1.7vw, 21px);
     letter-spacing: -0.01em;
-    margin-bottom: var(--space-1);
+    color: var(--ink);
   }
   .cap p {
-    font-size: 14px;
+    font-size: clamp(14px, 1.2vw, 15px);
     line-height: 1.5;
     color: var(--faring-700);
     margin: 0;
+  }
+
+  @media (max-width: 760px) {
+    .cap {
+      grid-template-columns: auto 1fr;
+      row-gap: var(--space-2);
+    }
+    .cap p {
+      grid-column: 2 / 3;
+    }
   }
 </style>
