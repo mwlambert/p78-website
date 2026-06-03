@@ -73,20 +73,14 @@ const applyHref = TALLY_APPLICATION_URL
       <div class="apply-block">
         {
           applyHref ? (
-            <>
-              <a
-                href={applyHref}
-                class="btn-apply"
-                target="_blank"
-                rel="noopener"
-              >
-                Apply for this role <span class="arr">&#8599;</span>
-              </a>
-              <p class="apply-note">
-                We retain application data for 12 months unless you ask us to delete it earlier — email{" "}
-                <a href="mailto:contact@p78space.com">contact@p78space.com</a>.
-              </p>
-            </>
+            <a
+              href={applyHref}
+              class="btn-apply"
+              target="_blank"
+              rel="noopener"
+            >
+              Apply for this role <span class="arr">&#8599;</span>
+            </a>
           ) : (
             <>
               <a href="/#partner" class="btn-apply">
