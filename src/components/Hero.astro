@@ -17,7 +17,8 @@ if (!image) {
       .readdirSync(heroDir)
       .filter((f) => /\.(jpe?g|png|webp|avif)$/i.test(f))
       .sort();
-    if (files[0]) image = `/images/hero/${files[0]}`;
+    const pick = files[Math.floor(Math.random() * files.length)];
+    if (pick) image = `/images/hero/${pick}`;
   } catch {
     /* directory missing — image stays undefined */
   }
@@ -49,7 +50,7 @@ if (!image) {
       <StatCell value="HTP" label="Propellant architecture" />
       <StatCell value="LEO &#8594; Cislunar" label="Operating envelope" />
       <StatCell value="Reusable" label="Design principle" />
-      <StatCell value="20+ years" label="Combined team experience" />
+      <StatCell value="20+ years" label="Combined experience" />
     </div>
   </div>
 </header>
