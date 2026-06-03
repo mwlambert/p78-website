@@ -17,7 +17,7 @@ export const GET: APIRoute = ({ site }) => {
     return `/careers/${role.slug}`;
   });
 
-  const urls = ["/", ...roleUrls];
+  const urls = ["/", "/privacy", ...roleUrls];
 
   const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

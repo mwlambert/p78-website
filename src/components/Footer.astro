@@ -30,6 +30,7 @@
     <div class="footer-base">
       <span>P78 Space &middot; &copy; 2026</span>
       <span>Imagery courtesy of NASA</span>
+      <span><a href="/privacy">Privacy</a></span>
       <span>Space logistics specialists</span>
     </div>
   </div>
@@ -100,5 +101,13 @@
     color: var(--faring-300);
     flex-wrap: wrap;
     gap: var(--space-3);
+  }
+  .footer-base a {
+    color: var(--faring-300);
+    text-decoration: none;
+    transition: color 0.25s;
+  }
+  .footer-base a:hover {
+    color: var(--paper);
   }
 </style>

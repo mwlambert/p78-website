@@ -1,0 +1,147 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout
+  title="Privacy · P78"
+  description="How P78 handles personal data shared via the website's application and contact forms."
+>
+  <Nav />
+
+  <header class="page-header">
+    <div class="wrap">
+      <a href="/" class="back">&#8592; Home</a>
+      <h1>Privacy</h1>
+      <p class="meta">How we handle the data you share with us.</p>
+    </div>
+  </header>
+
+  <article class="page-body">
+    <div class="wrap section-pad">
+      <section class="role-section">
+        <div class="col-label">What we collect</div>
+        <div class="prose">
+          <p>
+            Only what you actively send us — your name, email, role of interest, CV, links, and the contents of any message or cover note you submit via the application form or the partner contact form.
+          </p>
+        </div>
+      </section>
+
+      <section class="role-section">
+        <div class="col-label">Where it lives</div>
+        <div class="prose">
+          <p>
+            Job applications go into our internal Notion workspace via Tally (the form provider). Contact-form messages go to Netlify Forms, which emails them to us. We do not sell, share, or rent personal data to third parties.
+          </p>
+        </div>
+      </section>
+
+      <section class="role-section">
+        <div class="col-label">How long we keep it</div>
+        <div class="prose">
+          <p>
+            Job application data: 12 months from submission. Contact-form messages: until the conversation is concluded. You can ask us to delete your data sooner at any time — see below.
+          </p>
+        </div>
+      </section>
+
+      <section class="role-section">
+        <div class="col-label">Your rights</div>
+        <div class="prose">
+          <p>
+            You can request a copy of the data we hold about you, ask us to correct it, or ask us to delete it. We will action requests within 30 days. To exercise any of these rights, email <a href="mailto:contact@p78space.com">contact@p78space.com</a>.
+          </p>
+        </div>
+      </section>
+    </div>
+  </article>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: var(--space-8) 0 var(--space-7);
+  }
+  .back {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: var(--tracking-mono);
+    text-transform: uppercase;
+    color: var(--paper);
+    opacity: 0.65;
+    text-decoration: none;
+    margin-bottom: var(--space-6);
+    transition: opacity 0.25s;
+  }
+  .back:hover {
+    opacity: 1;
+  }
+  .page-header h1 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: var(--tracking-display);
+    line-height: 1.02;
+    font-size: var(--fs-display-lg);
+    max-width: 22ch;
+  }
+  .page-header .meta {
+    margin-top: var(--space-4);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: var(--tracking-mono);
+    text-transform: uppercase;
+    color: var(--faring-300);
+  }
+
+  .page-body {
+    background: var(--paper);
+    color: var(--ink);
+  }
+  .role-section {
+    display: grid;
+    grid-template-columns: minmax(140px, 0.35fr) 1fr;
+    gap: var(--space-grid);
+    padding: var(--space-5) 0;
+    border-top: 1px solid var(--rule-light);
+    align-items: start;
+  }
+  .role-section:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+  @media (max-width: 760px) {
+    .role-section {
+      grid-template-columns: 1fr;
+      gap: var(--space-3);
+    }
+  }
+  .col-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: var(--tracking-mono);
+    text-transform: uppercase;
+    color: var(--faring-700);
+  }
+  .prose {
+    font-size: clamp(15px, 1.35vw, 17px);
+    line-height: 1.62;
+    color: var(--ink-soft);
+    max-width: 60ch;
+  }
+  .prose p {
+    margin-bottom: var(--space-3);
+  }
+  .prose p:last-child {
+    margin-bottom: 0;
+  }
+  .prose a {
+    color: var(--ink);
+    text-decoration: underline;
+  }
+</style>
