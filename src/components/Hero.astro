@@ -8,7 +8,22 @@ interface Props {
   imageAlt?: string;
 }
 
-let { image, imageAlt = "" } = Astro.props;
+/**
+ * Alt text per hero image filename. Add an entry when adding a new image
+ * to public/images/hero/. If a filename has no entry, we fall back to
+ * the generic alt below.
+ */
+const HERO_ALT: Record<string, string> = {
+  "Paris_iss.jpg": "Paris at night photographed from the International Space Station",
+  "ISS023-E-29061.JPG": "Earth photographed from the International Space Station",
+  "ISS066-E-115830.JPG": "Earth photographed from the International Space Station",
+  "NASA-Apollo8-Dec24-Earthrise.jpg": "Earthrise photographed by the Apollo 8 crew",
+  "pleiades-mont-blanc.jpg": "Mont Blanc photographed by the Pléiades satellite",
+};
+const GENERIC_ALT = "Earth seen from space";
+
+let { image, imageAlt } = Astro.props;
+let pickedFile: string | undefined;
 
 if (!image) {
   const heroDir = path.resolve(process.cwd(), "public/images/hero");
@@ -17,11 +32,15 @@ if (!image) {
       .readdirSync(heroDir)
       .filter((f) => /\.(jpe?g|png|webp|avif)$/i.test(f))
       .sort();
-    const pick = files[Math.floor(Math.random() * files.length)];
-    if (pick) image = `/images/hero/${pick}`;
+    pickedFile = files[Math.floor(Math.random() * files.length)];
+    if (pickedFile) image = `/images/hero/${pickedFile}`;
   } catch {
     /* directory missing — image stays undefined */
   }
+}
+
+if (imageAlt === undefined) {
+  imageAlt = (pickedFile && HERO_ALT[pickedFile]) ?? GENERIC_ALT;
 }
 ---
 
