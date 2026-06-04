@@ -56,6 +56,32 @@
   </div>
 </section>
 
+<script>
+  // Mission triad cascade. When each .caps block enters view, the rows
+  // fade-and-rise in sequence (transition delays handled in CSS via
+  // nth-child). Since the two columns sit in a shared grid row, they
+  // come into view together — P/1 pairs with 01, P/2 with 02, P/3 with
+  // 03 as the user reads down. prefers-reduced-motion handled in CSS.
+  const prefersReduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!prefersReduced) {
+    const blocks = document.querySelectorAll(".mission-block .caps");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target
+              .querySelectorAll(".cap")
+              .forEach((cap) => cap.classList.add("in"));
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 },
+    );
+    blocks.forEach((b) => observer.observe(b));
+  }
+</script>
+
 <style>
   .mission-grid {
     display: grid;
@@ -91,6 +117,27 @@
     padding: var(--space-4) 0;
     border-bottom: 1px solid var(--rule-light);
     align-items: baseline;
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+      transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .cap.in {
+    opacity: 1;
+    transform: none;
+  }
+  .caps .cap:nth-child(1) { transition-delay: 0s; }
+  .caps .cap:nth-child(2) { transition-delay: 0.15s; }
+  .caps .cap:nth-child(3) { transition-delay: 0.3s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cap,
+    .cap.in {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
   }
   .cap .num {
     font-family: var(--font-mono);

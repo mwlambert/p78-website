@@ -69,7 +69,7 @@ if (imageAlt === undefined) {
       <StatCell value="HTP" label="Propellant architecture" />
       <StatCell value="LEO &#8594; Cislunar" label="Operating envelope" />
       <StatCell value="Reusable" label="Design principle" />
-      <StatCell value="20+ years" label="Combined experience" />
+      <StatCell value="20 years" label="Combined experience" />
     </div>
   </div>
 </header>
@@ -86,6 +86,55 @@ if (imageAlt === undefined) {
       },
       { passive: true },
     );
+  }
+
+  // Stat strip animation — mission-console feel. Cells starting with a
+  // number (e.g. "20 years") count up from 0 to the target then type
+  // the trailing suffix. Cells with no leading number (e.g. "HTP",
+  // "Reusable", "LEO → Cislunar") type in character-by-character.
+  // Skipped under prefers-reduced-motion.
+  if (!prefersReduced) {
+    const TYPE_DELAY_MS = 55;
+    const START_DELAY_MS = 350;
+    const cells = document.querySelectorAll(".stats-in .n");
+    cells.forEach((el) => {
+      const target = el as HTMLElement;
+      const final = target.textContent ?? "";
+      const numMatch = final.match(/^(\d+)(.*)$/);
+
+      if (numMatch) {
+        // Count-up + suffix type-in.
+        const endN = parseInt(numMatch[1], 10);
+        const suffix = numMatch[2];
+        const countStep = Math.max(20, Math.round(800 / endN));
+        target.textContent = "0";
+        let n = 0;
+        const countTick = () => {
+          n++;
+          target.textContent = String(n);
+          if (n < endN) {
+            setTimeout(countTick, countStep);
+          } else {
+            let i = 0;
+            const typeTick = () => {
+              target.textContent = endN + suffix.slice(0, ++i);
+              if (i < suffix.length) setTimeout(typeTick, TYPE_DELAY_MS);
+            };
+            setTimeout(typeTick, 100);
+          }
+        };
+        setTimeout(countTick, START_DELAY_MS);
+      } else {
+        // Pure type-in.
+        target.textContent = "";
+        let i = 0;
+        const tick = () => {
+          target.textContent = final.slice(0, ++i);
+          if (i < final.length) setTimeout(tick, TYPE_DELAY_MS);
+        };
+        setTimeout(tick, START_DELAY_MS);
+      }
+    });
   }
 </script>
 
@@ -118,7 +167,7 @@ if (imageAlt === undefined) {
       rgba(26, 29, 28, 0.94),
       rgba(26, 29, 28, 0.4) 42%,
       rgba(26, 29, 28, 0.05) 72%,
-      rgba(26, 29, 28, 0.22)
+      rgba(26, 29, 28, 0.5)
     );
   }
   .hero-body {
