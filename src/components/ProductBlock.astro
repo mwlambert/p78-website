@@ -9,13 +9,12 @@ interface Props {
   name: string;
   status: string;
   body: string[];
-  chips: string[];
   specs: Spec[];
   linkText?: string;
   href?: string;
 }
 
-const { number, category, name, status, body, chips, specs, linkText, href } =
+const { number, category, name, status, body, specs, linkText, href } =
   Astro.props;
 ---
 
@@ -27,16 +26,6 @@ const { number, category, name, status, body, chips, specs, linkText, href } =
   <div>
     <div class="product-body">
       {body.map((p) => <p>{p}</p>)}
-    </div>
-    <div class="chips">
-      {
-        chips.map((c) => (
-          <span class="chip">
-            <span class="dot" />
-            {c}
-          </span>
-        ))
-      }
     </div>
     <div class="specs">
       {

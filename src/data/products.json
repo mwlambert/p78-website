@@ -5,15 +5,13 @@
     "name": "Modern hypergolic propulsion.",
     "status": "In development",
     "body": [
-      "A hypergolic engine for reusable spacecraft. HTP, fast to integrate, designed for the demands of reusable infrastructure.",
-      "Sized for the 350+ kg small-sat market, then scaled across the vehicle layer."
+      "A modern alternative to toxic legacy systems, built for the demands of reusable infrastructure."
     ],
-    "chips": ["Hypergolic", "HTP", "Storable"],
     "specs": [
       { "k": "Thrust class", "v": "500 N" },
       { "k": "ISP", "v": "300 s" },
       { "k": "Propellant", "v": "HTP bipropellant" },
-      { "k": "Stage", "v": "Development" }
+      { "k": "Satellite class", "v": "&gt;350 kg" }
     ],
     "linkText": "Read the system brief",
     "href": ""
@@ -24,15 +22,13 @@
     "name": "Reusable in-space vehicles.",
     "status": "Concept",
     "body": [
-      "Reusable in-space vehicles built around P78 propulsion. Refuelable in orbit, cislunar range from day one — sized to move payloads, service assets, and recover them across the in-space economy.",
-      "One platform, many missions."
+      "Vehicles built around P78 propulsion. One platform, many missions."
     ],
-    "chips": ["Reusable", "Refuelable", "Cislunar range", "Multi-mission"],
     "specs": [
-      { "k": "Class", "v": "In-space vehicle" },
-      { "k": "Range", "v": "LEO &#8594; Lunar" },
-      { "k": "Refuelling", "v": "In-orbit" },
-      { "k": "Stage", "v": "Concept" }
+      { "k": "Transfer", "v": "LEO &#8594; Cislunar payload delivery" },
+      { "k": "Service", "v": "Refuel, inspect, reposition assets" },
+      { "k": "Carry", "v": "Multi-payload, multi-orbit deployment" },
+      { "k": "Recover", "v": "Active deorbit &amp; debris capture" }
     ],
     "linkText": "Read the vehicle brief",
     "href": ""
