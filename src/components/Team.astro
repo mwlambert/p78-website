@@ -6,6 +6,7 @@ interface Member {
   photo: string | null;
   title: string;
   description: string;
+  linkedin?: string;
 }
 
 const initials = (name: string) =>
@@ -49,6 +50,15 @@ const allSlots = [...founderSlots, ...investorSlots];
             <h3>{m.name}</h3>
             <p class="title">{m.title}</p>
             {m.description && <p class="bio">{m.description}</p>}
+            {m.linkedin && (
+              <a
+                class="card-link"
+                href={m.linkedin}
+                target="_blank"
+                rel="noopener"
+                aria-label={`${m.name} on LinkedIn`}
+              />
+            )}
           </article>
         ))
       }
@@ -113,12 +123,23 @@ const allSlots = [...founderSlots, ...investorSlots];
   }
 
   .team-card {
+    position: relative;
     border: 1px solid var(--rule-light);
     padding: var(--space-4);
     display: flex;
     flex-direction: column;
     gap: var(--space-3);
     background: var(--paper);
+    transition: border-color 0.25s;
+  }
+  .team-card:has(.card-link:hover) {
+    border-color: var(--ink);
+    cursor: pointer;
+  }
+  .card-link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
   }
 
   .photo {
