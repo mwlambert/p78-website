@@ -8,8 +8,8 @@
       "A modern alternative to toxic legacy systems, built for the demands of reusable infrastructure."
     ],
     "specs": [
-      { "k": "Thrust class", "v": "500 N" },
-      { "k": "ISP", "v": "300 s" },
+      { "k": "Thrust class", "v": "100-500 N" },
+      { "k": "Isp", "v": "300 s" },
       { "k": "Propellant", "v": "HTP bipropellant" },
       { "k": "Satellite class", "v": "&gt;350 kg" }
     ],
