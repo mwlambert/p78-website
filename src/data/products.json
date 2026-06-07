@@ -5,13 +5,13 @@
     "name": "Modern hypergolic propulsion.",
     "status": "In development",
     "body": [
-      "A modern alternative to toxic legacy systems, built for the demands of reusable infrastructure."
+      "A modern alternative to toxic legacy systems, built for repeated operations."
     ],
     "specs": [
       { "k": "Thrust class", "v": "100-500 N" },
       { "k": "Isp", "v": "300 s" },
       { "k": "Propellant", "v": "HTP bipropellant" },
-      { "k": "Satellite class", "v": "&gt;350 kg" }
+      { "k": "Satellite class", "v": "&gt;250 kg" }
     ],
     "linkText": "Read the system brief",
     "href": ""
@@ -26,7 +26,7 @@
     ],
     "specs": [
       { "k": "Transfer", "v": "LEO &#8594; Cislunar payload delivery" },
-      { "k": "Service", "v": "Refuel, inspect, reposition assets" },
+      { "k": "Service", "v": "Refuel, inspect, reposition" },
       { "k": "Carry", "v": "Multi-payload, multi-orbit deployment" },
       { "k": "Recover", "v": "Active deorbit &amp; debris capture" }
     ],
