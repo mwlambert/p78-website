@@ -42,7 +42,7 @@ const allSlots = [...founderSlots, ...investorSlots];
           <article class={`team-card card-${slot}`}>
             <div class="photo">
               {m.photo ? (
-                <img src={m.photo} alt={m.name} />
+                <img src={m.photo} alt={m.name} width="700" height="1050" />
               ) : (
                 <div class="photo-placeholder">{initials(m.name)}</div>
               )}
