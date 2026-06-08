@@ -4,7 +4,9 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-col">
-      <div class="footer-brand">P78</div>
+      <a href="/" class="footer-brand" aria-label="P78 — home">
+        <img src="/logo.svg" alt="P78" />
+      </a>
       <div class="footer-tag">
         The logistics layer of the in-space economy.
       </div>
@@ -78,10 +80,13 @@
     opacity: 1;
   }
   .footer-brand {
-    font-family: var(--font-mono);
-    letter-spacing: 0.18em;
-    font-size: 16px;
+    display: inline-block;
     margin-bottom: var(--space-3);
+  }
+  .footer-brand img {
+    display: block;
+    height: 28px;
+    width: auto;
   }
   .footer-tag {
     font-size: 13px;
